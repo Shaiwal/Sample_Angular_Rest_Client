@@ -1,0 +1,44 @@
+.methodClass {
+	float: left;
+	margin-left: 20px;
+}
+
+.urlClass {
+	float: left;
+	margin-left: 20px;
+}
+
+.submitBtn {
+	float: right;
+	left: 35px;
+	width: 150px;
+}
+
+.textAreaClass {
+	align-self: baseline;
+	width: 90%;
+	height: 100px;
+}
+
+.error {
+	color: red;
+	text-shadow: black;
+}
+
+.hnClass {
+	margin: 20px;
+}
+
+.hvClass {
+	margin: 20px;
+}
+
+#hnTxt {
+	width: 300px;
+	text-align: center;
+}
+
+#hvTxt {
+	width: 300px;
+	text-align: center;
+}

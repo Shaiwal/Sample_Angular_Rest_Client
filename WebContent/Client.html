@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="RestClient">
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular Rest Client</title>
+<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/restController.js"></script>
+</head>
+<body>
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#Tab1" data-toggle="tab">Angular
+				Rest Client</a></li>
+
+	</ul>
+	<div ng-controller="RestCtrl">
+		<div class="tab-content">
+			<div class="tab-pane active" id="Tab1">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Enter Rest Call Data</h3>
+					</div>
+
+
+
+					<form name="restForm" novalidate>
+						<div class="panel-body">
+							<div class="methodClass">
+								Method : <select ng-model="method"
+									ng-options="m.methodName for m in methods" ng-change="setHeader4Post()" ></select>
+							</div>
+							<div class="urlClass">
+								URL: <input type="text" ng-model="urlText" id="urlTxt"
+									placeholder="http://www.example.com" name="urlTxt"
+									ng-required="true" ng-pattern="/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/"/> <span
+									ng-show="restForm.urlTxt.$error.required" class="error">Please
+									enter URL.</span>
+								<span class="error"
+									ng-show="restForm.urlTxt.$error.pattern">Enter a valid
+									URL.</span>
+							</div>
+
+							<div class="submitBtn">
+								<input type="submit" ng-click="sendRequest()" id="sendRequest"
+									value="Send" class="btn btn-primary btn-block" />
+							</div>
+
+
+						</div>
+						<div class="well">
+							<!-- 	<h4>Body:</h4>
+							<hr> -->
+							<!-- <textarea class="textAreaClass" ng-model="reqBody" name="reqBody"
+								id="reqBody"></textarea>
+ -->
+							<h4>Query Parameters:</h4>
+							<div class="form-group" data-ng-repeat="param in params">
+
+								<button ng-click="addNewKVParam()">Add more</button>
+								<input type="text" ng-model="param.key" name=""
+									placeholder="key"> <input type="text"
+									ng-model="param.value" name="" placeholder="value">
+							</div>
+
+						</div>
+						<div class="well">
+							<h4>Request Header:</h4>
+							<hr>
+							<div class="hnClass">
+								Name: <input type="text" ng-model="headerNameText" id="hnTxt"
+									placeholder="example: Content-Type" name="hnTxt" ng-readonly="checkedName" />
+							</div>
+							<div class="hvClass">
+								Value: <input type="text" ng-model="headerValueText" id="hvTxt"
+									placeholder="example: application/json" name="hvTxt" ng-readonly="checkedValue"/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="well-sm">
+				<h3>Response:</h3>
+			</div>
+			<div ng-if="loadingIsDone">
+				<h4>{{content}}</h4>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
