@@ -1,7 +1,22 @@
-h3{
+.error {
 	color: red;
+	text-shadow: black;
 }
-#empId{
-	right: 50px;
-	color: green;
+
+.hnClass {
+	margin: 20px;
+}
+
+.hvClass {
+	margin: 20px;
+}
+
+#hnTxt {
+	width: 300px;
+	text-align: center;
+}
+
+#hvTxt {
+	width: 300px;
+	text-align: center;
 }

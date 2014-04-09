@@ -1,3 +1,21 @@
-h4{
-	color:blue;
+.methodClass {
+	float: left;
+	margin-left: 20px;
+}
+
+.urlClass {
+	float: left;
+	margin-left: 20px;
+}
+
+.submitBtn {
+	float: right;
+	left: 35px;
+	width: 150px;
+}
+
+.textAreaClass {
+	align-self: baseline;
+	width: 90%;
+	height: 100px;
 }
